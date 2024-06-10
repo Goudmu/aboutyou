@@ -28,7 +28,7 @@ const texts = [
 ];
 const lines = splitTextIntoLines(texts);
 
-const AnimatedHeading = () => {
+const AnimatedHeading = ({ setaboutYou }: any) => {
   const [line1Over, setLine1Over] = useState(false);
   const [line2Over, setline2Over] = useState(false);
   const [line5Over, setline5Over] = useState(false);
@@ -80,6 +80,14 @@ const AnimatedHeading = () => {
     const timer = setTimeout(() => {
       setline8Over(true);
     }, 20500 + 4500 + 5000 + 5500 + 3500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setaboutYou(false);
+    }, 49000);
 
     return () => clearTimeout(timer);
   }, []);
