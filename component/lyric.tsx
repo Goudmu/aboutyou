@@ -113,8 +113,9 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{
                       opacity: 0,
-                      y: -50,
-                      transition: { duration: 0.25 },
+                      scale: 0.5,
+                      y: -20,
+                      transition: { duration: 1.5, ease: "easeInOut" },
                     }}
                     transition={{
                       duration: 0.9 * words.length,
@@ -181,7 +182,7 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                         style={{
                           fontSize: `${hp ? "9px" : "14px"}`,
                           backgroundColor: "rgb(147,197,253)",
-
+                          padding: `${hp ? "1px" : "6px"}`,
                           margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
                       >
@@ -228,6 +229,7 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                         style={{
                           fontSize: `${hp ? "9px" : "14px"}`,
                           backgroundColor: "rgb(252, 165,165)",
+                          padding: `${hp ? "1px" : "6px"}`,
                           margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
                       >
@@ -274,6 +276,7 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                         style={{
                           fontSize: `${hp ? "9px" : "14px"}`,
                           backgroundColor: "rgb(134, 239,17)",
+                          padding: `${hp ? "1px" : "6px"}`,
                           margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
                       >
