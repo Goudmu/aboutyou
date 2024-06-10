@@ -1,6 +1,7 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import localfont from "next/font/local";
+import Image from "next/image";
 import { FC, useEffect, useRef, useState } from "react";
 
 const vale = localfont({
@@ -110,7 +111,7 @@ const AnimatedHeading = () => {
                     }}
                     transition={{
                       duration: 0.9 * words.length,
-                      delay: (lineIndex - 3) * 3.35,
+                      delay: lineIndex * 5,
                     }}
                     className="mb-4"
                   >
@@ -121,7 +122,7 @@ const AnimatedHeading = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
                           duration: 0.3,
-                          delay: lineIndex * 4.5 + wordIndex * 0.6,
+                          delay: lineIndex * 5 + wordIndex * 0.6,
                         }}
                         className="inline-block mx-1 text-6xl"
                       >
@@ -158,16 +159,15 @@ const AnimatedHeading = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
                           duration: 0.2,
-                          delay: (lineIndex - 4) * 3.5 + wordIndex * 0.3,
+                          delay: wordIndex * 0.4,
                         }}
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
-                          fontSize: "24px",
+                          fontSize: "14px",
                           backgroundColor: `${
                             lineIndex == 4 ? "rgb(147,197,253)" : ""
                           } `,
-                          padding: "10px",
-                          borderRadius: "5px",
+                          padding: "6px",
                           margin: "0 5px",
                         }}
                       >
@@ -204,14 +204,13 @@ const AnimatedHeading = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
                           duration: 0.2,
-                          delay: wordIndex * 0.3,
+                          delay: wordIndex * 0.45,
                         }}
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
-                          fontSize: "24px",
+                          fontSize: "14px",
                           backgroundColor: "rgb(253,224,71)",
-                          padding: "10px",
-                          borderRadius: "5px",
+                          padding: "6px",
                           margin: "0 5px",
                         }}
                       >
@@ -248,14 +247,13 @@ const AnimatedHeading = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
                           duration: 0.2,
-                          delay: wordIndex * 0.3,
+                          delay: wordIndex * 0.35,
                         }}
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
-                          fontSize: "24px",
+                          fontSize: "14px",
                           backgroundColor: "rgb(134, 239,172)",
-                          padding: "10px",
-                          borderRadius: "5px",
+                          padding: "6px",
                           margin: "0 5px",
                         }}
                       >
@@ -279,7 +277,7 @@ const AnimatedHeading = () => {
                       opacity: 0,
                       scale: 0.5,
                       y: -20,
-                      transition: { duration: 1.5, ease: "easeInOut" },
+                      transition: { duration: 0.25, ease: "easeInOut" },
                     }}
                     transition={{
                       duration: 0.9 * words.length,
@@ -296,8 +294,8 @@ const AnimatedHeading = () => {
                           delay: (lineIndex - 7) * 3.5 + wordIndex * 0.3,
                         }}
                         style={{
-                          fontSize: "24px",
-                          padding: "10px",
+                          fontSize: "14px",
+                          padding: "6px",
                         }}
                       >
                         {word + " "}
@@ -334,11 +332,11 @@ const AnimatedHeading = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
                           duration: 0.2,
-                          delay: 0.25 + wordIndex * 0.1,
+                          delay: 0.25 + wordIndex * 0.4,
                         }}
                         style={{
-                          fontSize: "24px",
-                          padding: "10px",
+                          fontSize: "14px",
+                          padding: "6px",
                         }}
                       >
                         {word + " "}
@@ -397,7 +395,7 @@ const AnimatedHeading = () => {
             className="absolute inset-0 flex items-center justify-center overflow-hidden bg-white"
             style={{ overflow: "hidden" }}
           >
-            {Array.from(Array(100), (_, index) => {
+            {Array.from(Array(250), (_, index) => {
               const randomColor = `rgb(${Math.floor(
                 Math.random() * 256
               )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
@@ -413,7 +411,7 @@ const AnimatedHeading = () => {
                     delay: 0.5,
                   }}
                   style={{
-                    fontSize: "24px",
+                    fontSize: "14px",
                     position: "absolute",
                     top: `${Math.random() * 95}vh`,
                     left: `${Math.random() * 95}vw`,
@@ -421,6 +419,44 @@ const AnimatedHeading = () => {
                   }}
                 >
                   U
+                </motion.span>
+              );
+            })}
+          </motion.div>
+        )}
+        {line8Over && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.5 } }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0 flex items-center justify-center overflow-hidden bg-white"
+            style={{ overflow: "hidden" }}
+          >
+            {Array.from(Array(50), (_, index) => {
+              const randomColor = `rgb(${Math.floor(
+                Math.random() * 256
+              )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+                Math.random() * 256
+              )})`;
+              return (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: Math.random() * 0.5 + 0.5,
+                    delay: 0.5,
+                  }}
+                  style={{
+                    fontSize: "14px",
+                    position: "absolute",
+                    top: `${Math.random() * 90}vh`,
+                    left: `${Math.random() * 90}vw`,
+                    color: randomColor,
+                  }}
+                >
+                  I think about you
                 </motion.span>
               );
             })}
