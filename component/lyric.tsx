@@ -147,13 +147,17 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                 {line2Over && line1Over && !line7Over && (
                   <motion.div
                     key={id}
-                    style={{ marginBottom: "20px", position: "absolute" }}
+                    style={{
+                      marginBottom: "20px",
+                      position: "absolute",
+                      padding: `${hp ? "1px" : "6px"}`,
+                    }}
                     initial={{ opacity: 0, scale: 0.5, y: 0, x: 0 }}
                     animate={{
                       opacity: 1,
                       scale: 1,
                       y: `-30vh`,
-                      x: `10vw`,
+                      x: `5vw`,
                     }}
                     exit={{
                       opacity: 0,
@@ -175,9 +179,9 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                         }}
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
-                          fontSize: `${hp ? "8px" : "14px"}`,
+                          fontSize: `${hp ? "9px" : "14px"}`,
                           backgroundColor: "rgb(147,197,253)",
-                          padding: `${hp ? "1px" : "6px"}`,
+
                           margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
                       >
@@ -195,9 +199,13 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                 {line5Over && !line7Over && (
                   <motion.div
                     key={id}
-                    style={{ marginBottom: "20px", position: "absolute" }}
+                    style={{
+                      marginBottom: "20px",
+                      position: "absolute",
+                      padding: `${hp ? "1px" : "6px"}`,
+                    }}
                     initial={{ opacity: 0, scale: 0.5, y: 0, x: 0 }}
-                    animate={{ opacity: 1, scale: 1, y: `-20vh`, x: `-15vw` }}
+                    animate={{ opacity: 1, scale: 1, y: `-20vh`, x: `-10vw` }}
                     exit={{
                       opacity: 0,
                       scale: 0,
@@ -218,9 +226,8 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                         }}
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
-                          fontSize: `${hp ? "8px" : "14px"}`,
+                          fontSize: `${hp ? "9px" : "14px"}`,
                           backgroundColor: "rgb(252, 165,165)",
-                          padding: `${hp ? "1px" : "6px"}`,
                           margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
                       >
@@ -238,7 +245,11 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                 {line6Over && !line7Over && (
                   <motion.div
                     key={id}
-                    style={{ marginBottom: "20px", position: "absolute" }}
+                    style={{
+                      marginBottom: "20px",
+                      position: "absolute",
+                      padding: `${hp ? "1px" : "6px"}`,
+                    }}
                     initial={{ opacity: 0, scale: 0.5, y: 0, x: 0 }}
                     animate={{ opacity: 1, scale: 1, y: `-10vh`, x: `7vw` }}
                     exit={{
@@ -261,9 +272,8 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                         }}
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
-                          fontSize: `${hp ? "8px" : "14px"}`,
+                          fontSize: `${hp ? "9px" : "14px"}`,
                           backgroundColor: "rgb(134, 239,17)",
-                          padding: `${hp ? "1px" : "6px"}`,
                           margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
                       >
