@@ -28,7 +28,7 @@ const texts = [
 ];
 const lines = splitTextIntoLines(texts);
 
-const AnimatedHeading = ({ setaboutYou }: any) => {
+const AnimatedHeading = ({ setaboutYou, hp }: any) => {
   const [line1Over, setLine1Over] = useState(false);
   const [line2Over, setline2Over] = useState(false);
   const [line5Over, setline5Over] = useState(false);
@@ -36,6 +36,7 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
   const [line7Over, setline7Over] = useState(false);
   const [line8Over, setline8Over] = useState(false);
 
+  console.log(hp);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLine1Over(true);
@@ -149,10 +150,15 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
                     key={id}
                     style={{ marginBottom: "20px", position: "absolute" }}
                     initial={{ opacity: 0, scale: 0.5, y: 0, x: 0 }}
-                    animate={{ opacity: 1, scale: 1, y: -250, x: 150 }}
-                    exit={{
+                    animate={{
                       opacity: 1,
-                      scale: 0.5,
+                      scale: 1,
+                      y: `-30vh`,
+                      x: `10vw`,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      scale: 0,
                       transition: { duration: 1.5, ease: "easeInOut" },
                     }}
                     transition={{
@@ -170,12 +176,10 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
                         }}
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
-                          fontSize: "14px",
-                          backgroundColor: `${
-                            lineIndex == 4 ? "rgb(147,197,253)" : ""
-                          } `,
-                          padding: "6px",
-                          margin: "0 5px",
+                          fontSize: `${hp ? "8px" : "14px"}`,
+                          backgroundColor: "rgb(147,197,253)",
+                          padding: `${hp ? "1px" : "6px"}`,
+                          margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
                       >
                         {word + " "}
@@ -194,10 +198,10 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
                     key={id}
                     style={{ marginBottom: "20px", position: "absolute" }}
                     initial={{ opacity: 0, scale: 0.5, y: 0, x: 0 }}
-                    animate={{ opacity: 1, scale: 1, y: -150, x: -150 }}
+                    animate={{ opacity: 1, scale: 1, y: `-20vh`, x: `-15vw` }}
                     exit={{
-                      opacity: 1,
-                      scale: 0.5,
+                      opacity: 0,
+                      scale: 0,
                       transition: { duration: 1.5, ease: "easeInOut" },
                     }}
                     transition={{
@@ -215,10 +219,10 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
                         }}
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
-                          fontSize: "14px",
-                          backgroundColor: "rgb(253,224,71)",
-                          padding: "6px",
-                          margin: "0 5px",
+                          fontSize: `${hp ? "8px" : "14px"}`,
+                          backgroundColor: "rgb(147,197,253)",
+                          padding: `${hp ? "1px" : "6px"}`,
+                          margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
                       >
                         {word + " "}
@@ -237,10 +241,10 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
                     key={id}
                     style={{ marginBottom: "20px", position: "absolute" }}
                     initial={{ opacity: 0, scale: 0.5, y: 0, x: 0 }}
-                    animate={{ opacity: 1, scale: 1, y: -70, x: 75 }}
+                    animate={{ opacity: 1, scale: 1, y: `-10vh`, x: `7vw` }}
                     exit={{
-                      opacity: 1,
-                      scale: 0.5,
+                      opacity: 0,
+                      scale: 0,
                       transition: { duration: 1.5, ease: "easeInOut" },
                     }}
                     transition={{
@@ -258,10 +262,10 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
                         }}
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
-                          fontSize: "14px",
-                          backgroundColor: "rgb(134, 239,172)",
-                          padding: "6px",
-                          margin: "0 5px",
+                          fontSize: `${hp ? "8px" : "14px"}`,
+                          backgroundColor: "rgb(147,197,253)",
+                          padding: `${hp ? "1px" : "6px"}`,
+                          margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
                       >
                         {word + " "}
