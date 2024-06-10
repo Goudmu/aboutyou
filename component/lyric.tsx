@@ -87,14 +87,14 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setaboutYou(false);
-    }, 49000);
+    }, 46000);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div
-      className=" relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden "
+      className=" relative w-screen h-screen flex flex-col items-center justify-center overflow-hidden "
       style={vale.style}
     >
       <audio autoPlay>
@@ -113,9 +113,8 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{
                       opacity: 0,
-                      scale: 0.5,
-                      y: -20,
-                      transition: { duration: 1.5, ease: "easeInOut" },
+                      y: -50,
+                      transition: { duration: 0.25 },
                     }}
                     transition={{
                       duration: 0.9 * words.length,
@@ -145,16 +144,16 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
           if (lineIndex == 4) {
             return (
               <AnimatePresence key={id}>
-                {line2Over && line1Over && !line5Over && (
+                {line2Over && line1Over && !line7Over && (
                   <motion.div
                     key={id}
-                    style={{ marginBottom: "20px" }}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    style={{ marginBottom: "20px", position: "absolute" }}
+                    initial={{ opacity: 0, scale: 0.5, y: 0, x: 0 }}
+                    animate={{ opacity: 1, scale: 1, y: -250, x: 150 }}
                     exit={{
-                      opacity: 0,
-                      y: -300,
-                      transition: { duration: 0.25 },
+                      opacity: 1,
+                      scale: 0.5,
+                      transition: { duration: 1.5, ease: "easeInOut" },
                     }}
                     transition={{
                       duration: 0.25,
@@ -190,16 +189,16 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
           if (lineIndex == 5) {
             return (
               <AnimatePresence key={id}>
-                {line5Over && !line6Over && (
+                {line5Over && !line7Over && (
                   <motion.div
                     key={id}
-                    style={{ marginBottom: "20px" }}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    style={{ marginBottom: "20px", position: "absolute" }}
+                    initial={{ opacity: 0, scale: 0.5, y: 0, x: 0 }}
+                    animate={{ opacity: 1, scale: 1, y: -150, x: -150 }}
                     exit={{
-                      opacity: 0,
-                      y: -300,
-                      transition: { duration: 0.25 },
+                      opacity: 1,
+                      scale: 0.5,
+                      transition: { duration: 1.5, ease: "easeInOut" },
                     }}
                     transition={{
                       duration: 0.25,
@@ -236,13 +235,13 @@ const AnimatedHeading = ({ setaboutYou }: any) => {
                 {line6Over && !line7Over && (
                   <motion.div
                     key={id}
-                    style={{ marginBottom: "20px" }}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    style={{ marginBottom: "20px", position: "absolute" }}
+                    initial={{ opacity: 0, scale: 0.5, y: 0, x: 0 }}
+                    animate={{ opacity: 1, scale: 1, y: -70, x: 75 }}
                     exit={{
-                      opacity: 0,
-                      y: -300,
-                      transition: { duration: 0.25 },
+                      opacity: 1,
+                      scale: 0.5,
+                      transition: { duration: 1.5, ease: "easeInOut" },
                     }}
                     transition={{
                       duration: 0.25,
