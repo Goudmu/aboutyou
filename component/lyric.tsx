@@ -36,7 +36,6 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
   const [line7Over, setline7Over] = useState(false);
   const [line8Over, setline8Over] = useState(false);
 
-  console.log(hp);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLine1Over(true);
@@ -220,7 +219,7 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
                           fontSize: `${hp ? "8px" : "14px"}`,
-                          backgroundColor: "rgb(147,197,253)",
+                          backgroundColor: "rgb(252, 165,165)",
                           padding: `${hp ? "1px" : "6px"}`,
                           margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
@@ -263,7 +262,7 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
                         className={`inline-block mx-1 text-center p-4`}
                         style={{
                           fontSize: `${hp ? "8px" : "14px"}`,
-                          backgroundColor: "rgb(147,197,253)",
+                          backgroundColor: "rgb(134, 239,17)",
                           padding: `${hp ? "1px" : "6px"}`,
                           margin: `${hp ? "2px 2px" : "5px 5px"}`,
                         }}
@@ -406,7 +405,7 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
             className="absolute inset-0 flex items-center justify-center overflow-hidden bg-white"
             style={{ overflow: "hidden" }}
           >
-            {Array.from(Array(250), (_, index) => {
+            {Array.from(Array(hp ? 50 : 250), (_, index) => {
               const randomColor = `rgb(${Math.floor(
                 Math.random() * 256
               )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
@@ -444,7 +443,7 @@ const AnimatedHeading = ({ setaboutYou, hp }: any) => {
             className="absolute inset-0 flex items-center justify-center overflow-hidden bg-white"
             style={{ overflow: "hidden" }}
           >
-            {Array.from(Array(50), (_, index) => {
+            {Array.from(Array(hp ? 25 : 50), (_, index) => {
               const randomColor = `rgb(${Math.floor(
                 Math.random() * 256
               )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(

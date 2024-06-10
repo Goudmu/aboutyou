@@ -27,7 +27,9 @@ export default function Home() {
         </div>
       )}
       {aboutYou && (
-        <AnimatedHeading setaboutYou={setaboutYou} hp={isScreenSmall} />
+        <div className=" h-screen w-screen flex flex-col items-center justify-center">
+          <AnimatedHeading setaboutYou={setaboutYou} hp={isScreenSmall} />
+        </div>
       )}
     </div>
   );
